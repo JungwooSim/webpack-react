@@ -4,7 +4,7 @@ const path = require("path");
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.js',
+  entry: './react-app/index.js',
   output: {
     path: path.resolve("dist"),
     filename: 'bundle.js'
@@ -31,11 +31,11 @@ module.exports = {
       },
     ],
   },
-  // plugins: [
-  //   new HtmlWebpackPlugin({
-  //     template: 'public/index.html',
-  //   })
-  // ],
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'react-app/public/index.html',
+    })
+  ],
   devServer: {
     host: 'localhost',
     port: port,
